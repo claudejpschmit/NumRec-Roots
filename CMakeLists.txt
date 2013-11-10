@@ -1,28 +1,27 @@
 cmake_minimum_required(VERSION 2.8)
-project(ROOT_FINDER)
+project(ROOTFINDER)
 message(status "${CMAKE_CURRENT_SOURCE_DIR}")
 include_directories(src include)
-set(HEADER_FILES include/Preamble.hpp
+set(HEADER_FILES include/Preamble.hpp include/Rootfinders.hpp
         include/helpers.hpp)
+find_package(Boost 1.53)
+ADD_DEFINITIONS(-DBOOST_TEST_DYN_LINK) 
+message(status "** Boost Include: ${Boost_INCLUDE_DIR}")
+message(status "** Boost Libraries: ${Boost_LIBRARY_DIRS}")
+message(status "** Boost Libraries: ${Boost_LIBRARIES}")
 
-#find_package(Boost 1.53)
-#ADD_DEFINITIONS(-DBOOST_TEST_DYN_LINK) 
-#message(status "** Boost Include: ${Boost_INCLUDE_DIR}")
-#message(status "** Boost Libraries: ${Boost_LIBRARY_DIRS}")
-#message(status "** Boost Libraries: ${Boost_LIBRARIES}")
+INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIR})
+LINK_DIRECTORIES(${Boost_LIBRARY_DIRS})
 
-#INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIR})
-#LINK_DIRECTORIES(${Boost_LIBRARY_DIRS})
-
-#set(Boost_USE_STATIC_LIBS        OFF)
-#set(Boost_USE_MULTITHREADED      ON)
-#set(Boost_USE_STATIC_RUNTIME     OFF)
-#set(BOOST_ALL_DYN_LINK           ON)   # force dynamic linking for all libraries
+set(Boost_USE_STATIC_LIBS        OFF)
+set(Boost_USE_MULTITHREADED      ON)
+set(Boost_USE_STATIC_RUNTIME     OFF)
+set(BOOST_ALL_DYN_LINK           ON)   # force dynamic linking for all libraries
 
 
-#find_package(Armadillo REQUIRED)
-#INCLUDE_DIRECTORIES(${ARMADILLO_INCLUDE_DIRS})
-#LINK_DIRECTORIES(${ARMADILLO_LIBRARIES})
+find_package(Armadillo REQUIRED)
+INCLUDE_DIRECTORIES(${ARMADILLO_INCLUDE_DIRS})
+LINK_DIRECTORIES(${ARMADILLO_LIBRARIES})
 
 
 #include(FindROOT.cmake)
@@ -35,11 +34,11 @@ set(HEADER_FILES include/Preamble.hpp
 #INCLUDE_DIRECTORIES(${ROOT_INCLUDE_DIR})
 #LINK_DIRECTORIES(${ROOT_LIBRARY_DIR})
 
-add_executable(Root_finder src/Main.cpp
+add_executable(Rootfinder src/Main.cpp src/Rootfinders.cpp
         src/helpers.cpp ${HEADER_FILES})
-target_link_libraries(Root_finder -lm ${Boost_LIBRARIES})
-target_link_libraries(Root_finder -lm ${ARMADILLO_LIBRARIES})
-#target_link_libraries(Root_finder -lm ${ROOT_LIBRARIES})
+    target_link_libraries(Rootfinder -lm ${Boost_LIBRARIES})
+    target_link_libraries(Rootfinder -lm ${ARMADILLO_LIBRARIES})
+#target_link_libraries(ODE_solver -lm ${ROOT_LIBRARIES})
 
 find_package(Doxygen)
 if(DOXYGEN_FOUND)
@@ -60,4 +59,5 @@ else()
     message(status "Setting MSVC flags")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHc-")
 endif()
-install(TARGETS Root_finder DESTINATION ${CMAKE_BINARY_DIR}/lib)
+install(TARGETS Rootfinder DESTINATION ${CMAKE_BINARY_DIR}/lib)
+ 
