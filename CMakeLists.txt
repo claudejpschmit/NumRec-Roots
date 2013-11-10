@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 2.8)
 project(ROOTFINDER)
 message(status "${CMAKE_CURRENT_SOURCE_DIR}")
 include_directories(src include)
-set(HEADER_FILES include/Preamble.hpp include/Rootfinders.hpp
-        include/helpers.hpp)
+set(HEADER_FILES include/Rootfinders.hpp
+        include/Functions.hpp)
 find_package(Boost 1.53)
 ADD_DEFINITIONS(-DBOOST_TEST_DYN_LINK) 
 message(status "** Boost Include: ${Boost_INCLUDE_DIR}")
@@ -35,7 +35,7 @@ LINK_DIRECTORIES(${ARMADILLO_LIBRARIES})
 #LINK_DIRECTORIES(${ROOT_LIBRARY_DIR})
 
 add_executable(Rootfinder src/Main.cpp src/Rootfinders.cpp
-        src/helpers.cpp ${HEADER_FILES})
+        src/Functions.cpp ${HEADER_FILES})
     target_link_libraries(Rootfinder -lm ${Boost_LIBRARIES})
     target_link_libraries(Rootfinder -lm ${ARMADILLO_LIBRARIES})
 #target_link_libraries(ODE_solver -lm ${ROOT_LIBRARIES})

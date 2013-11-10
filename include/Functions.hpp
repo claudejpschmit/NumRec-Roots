@@ -1,6 +1,7 @@
 #pragma once
 
-#include "Preamble.hpp"
+#include <iostream>
+#include <fstream>
 
 namespace ROOTFINDER {
 
@@ -10,7 +11,7 @@ namespace ROOTFINDER {
             virtual double evaluate(double x) = 0;
             virtual double first_derivative(double x) = 0;
             virtual double second_derivative(double x) = 0;
-            void plot_over_range(double x_min, double x_max, int n_points, ofstream *output);
+            void plot_over_range(double x_min, double x_max, int n_points, std::ofstream *output);
     };
 
     class f1 : public function {

@@ -1,5 +1,4 @@
-#include "Preamble.hpp"
-#include "helpers.hpp"
+#include "Functions.hpp"
 #include "Rootfinders.hpp"
 
 int main(int argc, char *argv[])
