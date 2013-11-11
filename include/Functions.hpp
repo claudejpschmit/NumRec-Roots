@@ -8,9 +8,10 @@ namespace ROOTFINDER {
     class function {
 
         public:
-            virtual double evaluate(double x) = 0;
-            virtual double first_derivative(double x) = 0;
-            virtual double second_derivative(double x) = 0;
+            virtual ~function(){}
+            virtual double evaluate(double x);
+            virtual double first_derivative(double x);
+            virtual double second_derivative(double x);
             void plot_over_range(double x_min, double x_max, int n_points, std::ofstream *output);
     };
 

@@ -1,27 +1,29 @@
 #include "Functions.hpp"
 
 #include <math.h>
+#include <assert.h>
 
 namespace ROOTFINDER {
 
-    /* 
-       double function::evaluate(double x) {
 
-       }
-       double function::first_derivative(double x) {
-
-       }
-       double function::second_derivative(double x) {
-
-       }*/
+    double function::evaluate(double x) 
+    {
+        std::cout << "wrong" << std::endl;
+    }
+    double function::first_derivative(double x) 
+    {
+    }
+    double function::second_derivative(double x) 
+    {
+    }
 
     void function::plot_over_range(double x_min, double x_max, int n_points, std::ofstream * output) 
     {
-
+        assert(x_min <= x_max);
         double x = x_min;
         double stepsize = (x_max - x_min)/(double)n_points;
         while (x <= x_max) {
-            *output << this->evaluate(x) << std::endl;
+            *output << x << " " << this->evaluate(x) << std::endl;
             x += stepsize;
         }
     }
