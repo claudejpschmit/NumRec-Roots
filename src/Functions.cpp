@@ -8,13 +8,18 @@ namespace ROOTFINDER {
 
     double function::evaluate(double x) 
     {
-        std::cout << "wrong" << std::endl;
+        (void)x;
+        return 0;
     }
     double function::first_derivative(double x) 
     {
+        (void)x;
+        return 0;
     }
     double function::second_derivative(double x) 
     {
+        (void)x;
+        return 0;
     }
 
     void function::plot_over_range(double x_min, double x_max, int n_points, std::ofstream * output) 

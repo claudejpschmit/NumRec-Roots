@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <assert.h>
+#include <cmath>
 
 namespace ROOTFINDER {
 
@@ -26,6 +27,7 @@ namespace ROOTFINDER {
     double BisectionMethod::find_in_range(double x_min, double x_max, double precision) 
     {
 
+        assert(x_min < x_max);
         stepcount = 0;
         double x1 = x_min; 
         double x2 = x_max; 
@@ -52,8 +54,18 @@ namespace ROOTFINDER {
         this->f = f;
     }
 
-    double NRMethod::find_in_range(double x_min, double x_max, double precision) 
+    double NRMethod::find_in_range(double x_min, double x_max, double precision)
     {
-        return 0;
+        stepcount = 0;
+        double x_0 = (x_max + x_min) / 2.0;
+        double d = - f->evaluate(x_0) / f->first_derivative(x_0);
+        while (std::abs(d) > precision) {
+            
+            x_0 += d;
+            d = - f->evaluate(x_0) / f->first_derivative(x_0);
+            ++stepcount;
+        }
+
+        return x_0;
     }
 }
