@@ -8,23 +8,31 @@ namespace ROOTFINDER {
 
     double function::evaluate(double x) 
     {
+        // shuts warnings about unsused parameters
         (void)x;
         return 0;
     }
     double function::first_derivative(double x) 
     {
+        // shuts warnings about unsused parameters
         (void)x;
         return 0;
     }
     double function::second_derivative(double x) 
     {
+        // shuts warnings about unsused parameters
         (void)x;
         return 0;
     }
 
     void function::plot_over_range(double x_min, double x_max, int n_points, std::ofstream * output) 
     {
+        // Requires the input to be valid.
         assert(x_min <= x_max);
+        // Requires the output stream to be opened by user.
+        assert(output->is_open());
+
+        // Divides the range into n_points and puts data to the ouput stream.
         double x = x_min;
         double stepsize = (x_max - x_min)/(double)n_points;
         while (x <= x_max) {
