@@ -13,7 +13,7 @@ namespace ROOTFINDER {
 
     /* ****     BisectionMethod     **** */
 
-    BisectionMethod::BisectionMethod(function *f)
+    BisectionMethod::BisectionMethod(Function *f)
     {
         this->f = f;
     }
@@ -54,7 +54,7 @@ namespace ROOTFINDER {
 
     /* ****     Newton-Raphson Method   **** */
 
-    NRMethod::NRMethod(function *f) 
+    NRMethod::NRMethod(Function *f) 
     {
         this->f = f;
     }

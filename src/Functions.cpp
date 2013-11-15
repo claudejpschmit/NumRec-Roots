@@ -6,26 +6,26 @@
 namespace ROOTFINDER {
 
 
-    double function::evaluate(double x) 
+    double Function::evaluate(double x) 
     {
         // shuts warnings about unsused parameters
         (void)x;
         return 0;
     }
-    double function::first_derivative(double x) 
+    double Function::first_derivative(double x) 
     {
         // shuts warnings about unsused parameters
         (void)x;
         return 0;
     }
-    double function::second_derivative(double x) 
+    double Function::second_derivative(double x) 
     {
         // shuts warnings about unsused parameters
         (void)x;
         return 0;
     }
 
-    void function::plot_over_range(double x_min, double x_max, int n_points, std::ofstream * output) 
+    void Function::plot_over_range(double x_min, double x_max, int n_points, std::ofstream * output) 
     {
         // Requires the input to be valid.
         assert(x_min <= x_max);

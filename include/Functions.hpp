@@ -12,14 +12,14 @@ namespace ROOTFINDER {
      *  and second derivatives should be specified.
      *
      */
-    class function {
+    class Function {
 
         public:
             /** Virtual destructor is necessary to be able 
              *  to delete pointers to derived classes when 
              *  they go out of scope
              */
-            virtual ~function(){}
+            virtual ~Function(){}
 
             /** \brief Contains the definition of f(x), to be 
              *      overloaded by the derived classes.
@@ -58,7 +58,7 @@ namespace ROOTFINDER {
     };
 
     /// \brief First function for which the roots should be found
-    class f1 : public function {
+    class f1 : public Function {
 
         public:
             f1();
@@ -79,7 +79,7 @@ namespace ROOTFINDER {
     };
 
     /// \brief Second function for which the roots should be found
-    class f2 : public function {
+    class f2 : public Function {
 
         public:
             f2();

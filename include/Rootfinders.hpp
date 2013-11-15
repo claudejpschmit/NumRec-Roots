@@ -38,7 +38,7 @@ namespace ROOTFINDER {
         protected:
 
             /// pointer to the function for which the roots should be found.
-            function *f;
+            Function *f;
 
             /// Number of steps needed to produce the result
             int stepcount;
@@ -52,7 +52,7 @@ namespace ROOTFINDER {
             /** \brief Constuctor that defines the function to be examined.
              *  \param f pointer to the function that is to be examined.
              */
-            BisectionMethod(function *f);
+            BisectionMethod(Function *f);
 
             /** \brief Bisection Method algorithm to find a single root
              *      within a range up to a certain precision.
@@ -78,7 +78,7 @@ namespace ROOTFINDER {
             /** \brief Constructor that defines the function to be examined.
              *  \param f pointer to the function that is to be examined.
              */
-            NRMethod(function *f);
+            NRMethod(Function *f);
             
             /** \brief Newton Raphson Method algorithm to find a single root
              *      within a range up to a certain precision. Initial guess 

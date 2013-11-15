@@ -92,6 +92,5 @@ int main(int argc, char *argv[])
     std::cout << "Newton Raphson method needed " 
         << NRM_f2.get_stepcount() << " steps." << std::endl;
 
-
     return 0;
 }
