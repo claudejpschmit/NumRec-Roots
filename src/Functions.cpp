@@ -8,19 +8,19 @@ namespace ROOTFINDER {
 
     double Function::evaluate(double x) 
     {
-        // shuts warnings about unsused parameters
+        // shuts warnings about unused parameters
         (void)x;
         return 0;
     }
     double Function::first_derivative(double x) 
     {
-        // shuts warnings about unsused parameters
+        // shuts warnings about unused parameters
         (void)x;
         return 0;
     }
     double Function::second_derivative(double x) 
     {
-        // shuts warnings about unsused parameters
+        // shuts warnings about unused parameters
         (void)x;
         return 0;
     }

@@ -30,7 +30,7 @@ namespace ROOTFINDER {
              *  \param x_max upper bound of the range.
              *  \param precision how precise we want the result to be.
              */
-            virtual double find_in_range(double x_min, double x_max, double precision) = 0;
+            virtual double find_in_range(double x_min, double x_max, double precision);
 
             /// \brief Gets the Number of steps needed to produce the result.
             int get_stepcount();

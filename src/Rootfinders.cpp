@@ -6,6 +6,17 @@
 
 namespace ROOTFINDER {
 
+
+    double Rootfinder::find_in_range(double x_min, double x_max, double precision)
+    {
+        // shuts warnings about unused parameters
+        (void)x_min;
+        (void)x_max;
+        (void)precision;
+        return 0;
+
+    }
+
     int Rootfinder::get_stepcount()
     {
         return stepcount;
