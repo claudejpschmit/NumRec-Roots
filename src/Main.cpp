@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
     std::cout << "Root of f2 between 0 and 1 is " 
         << BM_f2.find_in_range(0.0, 1.0, precision) << std::endl; 
     std::cout << "Bisction method needed " 
-        << BM_f2.get_stepcount() << " steps." << std::endl;
+        << BM_f2.get_stepcount() << " steps." << std::endl << std::endl;
 
     // Instantiating Newton Raphson Method for both functions.
     ROOTFINDER::NRMethod NRM_f1(&f1_object);
